@@ -1,0 +1,395 @@
+/* GENERAL */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Serif Old Uyghur", serif;
+}
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 2px;
+  color: #000000;
+  background-color: #ffffffb5;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+.btn:hover {
+  background-color: #930000;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* END GENERAL */
+
+/* TYPOGRAFY */
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 22px;
+}
+p {
+  font-size: 18px;
+}
+/* END TYPOGRAPHY */
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: #000000;
+  border-bottom: 3px solid #930000;
+  z-index: 99;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.logo {
+  align-items: center;
+}
+
+.logo img {
+  transition: all 0.5s linear;
+}
+
+.logo img:hover {
+  width: 175px;
+  height: auto;
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu ul a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: font-size 0.3s ease-in;
+}
+
+.menu ul a:hover {
+  font-size: 22px;
+  text-decoration: underline;
+  text-decoration-color: #930000;
+  text-decoration-thickness: 3px;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+  .header-wrapper {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* END HEADER */
+
+/* HERO */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/hero-background.png");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid #930000;
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.hero-txt {
+  color: #ffffff;
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  padding-top: 300px;
+  animation: fadeIn 2s ease-out 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(images/mobile-background.png);
+    background-size: cover;
+  }
+}
+
+/* END HERO */
+
+/* DESCRIPTION */
+
+.description {
+  width: 100%;
+  border-bottom: 3px solid #930000;
+}
+
+.description-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: stretch center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.description-txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #000000;
+}
+
+.description-txt h2 {
+  padding-bottom: 30px;
+}
+.description-txt p {
+  padding-bottom: 100px;
+}
+
+.description-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("images/description-image.png");
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .description-wrapper {
+    flex-wrap: wrap;
+  }
+  .description-img {
+    border-bottom: 3px solid #930000;
+  }
+}
+
+/* END DESCRIPTION */
+
+/* SPECIFICS */
+
+.specifics {
+  width: 100%;
+  border-bottom: 3px solid #930000;
+}
+
+.specifics-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch center;
+}
+
+.specifics-txt {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.specifics-data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding-top: 100px;
+}
+
+.specifics-data h2 {
+  transition: font-size 0.5s ease-in-out;
+}
+
+.specifics-data h2:hover {
+  font-size: 44px;
+  text-decoration: underline;
+  text-decoration-color: #930000;
+}
+
+.specifics-link {
+  width: 100%;
+  height: 600px;
+  background-image: url(images/road.png);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.specifics-link h2 {
+  padding-bottom: 50px;
+  padding-top: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  .specifics-wrapper {
+    flex-wrap: wrap;
+  }
+  .specifics-txt {
+    display: none;
+  }
+}
+
+/* END SPECIFICS */
+
+.riders {
+  width: 100%;
+  background-color: #000000;
+}
+.riders-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  gap: 150px;
+  row-gap: 30px;
+}
+
+.rider {
+  width: calc(25% - 150px);
+  text-align: center;
+  box-sizing: border-box;
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: all 0.5s linear;
+}
+
+.rider img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.rider a {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 2px solid;
+  background-color: #930000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+.rider:hover {
+  background-color: #930000;
+  color: #ffffff;
+}
+
+.rider a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@media only screen and (max-width: 1000px) {
+  .rider {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .riders-wrapper {
+    gap: 0;
+    row-gap: 20px;
+    flex-direction: column;
+  }
+
+  .rider h3,
+  p {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .rider h3,
+  p {
+    display: none;
+  }
+}
+
+/* END RIDERS */
+
+.footer {
+  width: 100%;
+  background-color: #930000;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
