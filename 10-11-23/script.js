@@ -76,7 +76,6 @@ const imageGenerator = (imgObj) => {
   image.setAttribute("src", imgObj.url);
   image.setAttribute("alt", imgObj.alternativeTest);
   image.setAttribute("class", imgObj.class);
-  //   image.setAttribute("width", "400px");
   image.setAttribute("height", "auto");
 
   return image;
@@ -147,11 +146,29 @@ const imageList = [
     alternativeTest: "Eighth Image",
     class: "images",
   },
+  {
+    id: 9,
+    url: "https://picsum.photos/300/300?random=12",
+    alternativeTest: "Ninth Image",
+    class: "images",
+  },
+  {
+    id: 10,
+    url: "https://picsum.photos/300/300?random=13",
+    alternativeTest: "Tenth Image",
+    class: "images",
+  },
 ];
 
 // PER OGNI OGGETTO PRESENTE NELL'ARRAY VIENE INVOCATA IMAGEGENERATOR PRENDENDO COME ARGOMENTO L'OGGETTO STESSO
 
-imageList.forEach((image) => {
-  const otherImages = imageGenerator(image);
-  secondGallery.append(otherImages);
+const moreBtn = createEl("button");
+secondGallery.append(moreBtn);
+moreBtn.textContent = "MORE";
+moreBtn.addEventListener("click", () => {
+  moreBtn.setAttribute("class", "hider");
+  imageList.forEach((image) => {
+    const otherImages = imageGenerator(image);
+    secondGallery.append(otherImages);
+  });
 });
