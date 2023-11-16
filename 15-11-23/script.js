@@ -1,6 +1,7 @@
 const createEl = (tag) => document.createElement(tag);
 const addClass = (element, className) => element.classList.add(className);
 const removeClass = (element, className) => element.classList.remove(className);
+
 const cardGenerator = (mockData) => {
   const cardEl = createEl("div");
   const cardImg = createEl("img");
@@ -387,7 +388,11 @@ document.body.append(menuSection);
 
 // card section
 
-roboMockData.map((item) => robotSection.append(cardGenerator(item)));
+try {
+  roboMockData.map((item) => robotSection.append(cardGenerator(item)));
+} catch (err) {
+  console.error(err);
+}
 monsterMockData.map((item) => monsterSection.append(cardGenerator(item)));
 miniRoboMockData.map((item) => miniRobotSection.append(cardGenerator(item)));
 catMockData.map((item) => catSection.append(cardGenerator(item)));
