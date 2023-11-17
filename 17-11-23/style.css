@@ -1,0 +1,91 @@
+body {
+  font-family: monospace;
+  background-color: #000000;
+}
+
+.body-hider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000fa;
+  z-index: 1000;
+}
+
+.popup-wrapper {
+  position: fixed;
+  left: calc(50% - 250px);
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  width: 500px;
+  z-index: 1001;
+
+  background-color: #7c1843;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+
+  animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 100px;
+  }
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.btn-wrapper button {
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50px;
+
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+
+  cursor: pointer;
+
+  transition: all 0.35s;
+}
+
+.btn-wrapper button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.popup-txt {
+  color: white;
+  padding-bottom: 30px;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper img {
+  border: 10px solid #7c1843;
+  border-radius: 20px;
+  transition: all 1s;
+}
+
+.wrapper img:hover {
+  width: 1000px;
+}
