@@ -1,0 +1,320 @@
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: whitesmoke;
+
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
+}
+p {
+  font-size: 1.3em;
+}
+
+button {
+  color: white;
+  font-size: 1em;
+  border: 0;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #ff6366;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #c73f41;
+}
+
+/* HEADER  */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 400px; */
+  max-width: 100%;
+  height: 100px;
+}
+
+header img {
+  width: 100px;
+  cursor: pointer;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+header ul li {
+  transition: all 0.1s ease-out;
+}
+
+header ul li:hover {
+  border-bottom: 5px solid #ff6366;
+}
+
+.order-btn {
+  padding: 10px;
+  border: 2px solid #ff6366;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #ff6366;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  header {
+    /* gap: 200px; Riduce lo spazio tra gli elementi */
+    height: 80px; /* Riduce l'altezza dell'header */
+  }
+
+  header img {
+    width: 80px; /* Riduce la dimensione dell'immagine */
+  }
+
+  header ul {
+    gap: 20px; /* Riduce lo spazio tra gli elementi della lista */
+    font-size: 1em; /* Riduce la dimensione del font */
+  }
+
+  .order-btn {
+    padding: 5px; /* Riduce il padding del pulsante */
+    border-radius: 20px; /* Riduce il raggio del bordo per adattarlo */
+  }
+  .nav-list {
+    display: none;
+  }
+}
+
+/* END HEADER  */
+
+/* HERO */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 200px;
+  width: 50%;
+}
+
+.hero img {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .hero img {
+    width: 100%; /* Imposta la larghezza dell'immagine al 100% */
+    max-width: 400px; /* Opzionale: imposta una larghezza massima per l'immagine */
+  }
+  .hero-txt {
+    padding-left: 0; /* Riduce il padding a sinistra */
+    padding-bottom: 50px;
+    width: 100%; /* Imposta la larghezza al 100% */
+    align-items: center;
+    text-align: center; /* Centra il testo */
+  }
+  .hero-txt button {
+    font-size: 1em; /* Riduce la dimensione del font del pulsante */
+    padding: 10px; /* Riduce il padding del pulsante */
+  }
+}
+/* END HERO */
+
+/* INTER-TITLE */
+
+.inter-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+}
+
+/* END INTER-TITLE */
+
+/* TRIPTYCH */
+
+.triptych {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  height: 500px;
+  padding-bottom: 100px;
+}
+
+.triptych-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.triptych img {
+  width: 400px;
+  height: 250px;
+}
+
+@media (max-width: 768px) {
+  .triptych {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .triptych img {
+    width: 300px;
+  }
+
+  /* .triptych-wrapper p {
+    display: none;
+  } */
+}
+
+/* END TRIPTYCH */
+
+/* FEATURE  */
+
+.feature {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.feature-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 100px;
+  width: 50%;
+}
+
+.feature img {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .feature {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature img {
+    width: 100%; /* Imposta la larghezza dell'immagine al 100% */
+    max-width: 400px; /* Opzionale: imposta una larghezza massima per l'immagine */
+  }
+  .feature-txt {
+    padding-left: 0;
+    width: 100%; /* Imposta la larghezza al 100% */
+    align-items: center;
+    text-align: center; /* Centra il testo */
+  }
+  .feature-txt button {
+    font-size: 1em; /* Riduce la dimensione del font del pulsante */
+    padding: 10px; /* Riduce il padding del pulsante */
+  }
+}
+
+/* END FEATURE  */
+
+/* CONTENT DIVIDER  */
+
+.content-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: #ff6366;
+  color: white;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .content-divider {
+    text-align: center;
+    height: 100px;
+  }
+}
+
+/* END CONTENT DIVIDER */
+
+/* BLOG  */
+
+.blog {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.blog img {
+  width: 400px;
+  height: 200px;
+}
+@media (max-width: 768px) {
+  .blog {
+    flex-direction: column;
+  }
+  .blog img {
+    width: 200px;
+    height: 100px;
+  }
+}
+
+/* END BLOG  */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.7em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+  p {
+    font-size: 1em;
+  }
+}
