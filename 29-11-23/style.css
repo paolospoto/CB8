@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ephesis&display=swap");
+
+body {
+  background-color: black;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.navbar {
+  margin: 20px 0 0 0;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.search {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  display: flex;
+  height: 34px;
+
+  border: 2px solid black;
+}
+
+.search img {
+  object-fit: cover;
+}
+
+.search input[type="text"] {
+  color: rgb(26, 26, 26);
+  padding-left: 8px;
+  width: 100%;
+  border-radius: 6px;
+  border: 0;
+  outline: none;
+}
+
+.links {
+  border: 2px solid black;
+  color: white;
+}
+
+.links-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  list-style-type: none;
+}
+
+.links-list li {
+  cursor: pointer;
+}
+
+.links-list select {
+  cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+
+  width: 800px;
+  padding-bottom: 30px;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  border-radius: 20px;
+  border: 2px white solid;
+}
+
+.modal-wrapper img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid white;
+  padding-bottom: 20px;
+}
+
+.modal-btn {
+  border: 0;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.hide {
+  display: none;
+}
