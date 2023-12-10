@@ -1,0 +1,287 @@
+/* general */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  margin: 10px;
+  position: relative;
+  background-color: rgb(27, 27, 27);
+  color: white;
+}
+
+button {
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a {
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* header */
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: black;
+}
+
+/* nav */
+
+.nav-menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+
+  background-color: rgb(10, 10, 10);
+}
+.open-favorites-button {
+  background-color: transparent;
+  border: 0;
+  padding: 2px;
+}
+
+/* form */
+
+.form-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.99);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  color: white;
+}
+
+/* hero */
+
+.hero-wrapper {
+  position: relative;
+  height: 85vh;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  border-radius: 5px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.hero-button {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.hero-button:hover {
+  transform: scale(1.1);
+}
+
+/* card */
+
+.cards-section-wrapper {
+  margin-bottom: 10px;
+}
+
+.cards-section-wrapper h2 {
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
+  background-color: rgb(10, 10, 10);
+}
+
+.cards-wrapper {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+}
+
+.cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.card-wrapper {
+  position: relative;
+  width: max-content;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.active {
+  opacity: 1;
+}
+
+.add-favorite-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+
+  background-image: url("../media/star.png");
+
+  background-size: cover;
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* favorites  */
+
+.favorites-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: rgb(27, 27, 27);
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  color: white;
+}
+
+.favorites-head-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  border-radius: 5px;
+  width: 95%;
+
+  background-color: rgb(10, 10, 10);
+}
+
+.favorites-head-wrapper button {
+  border: none;
+}
+
+.favorites-cards-wrapper {
+  padding: 0px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px;
+  border-radius: 5px;
+
+  background-color: rgb(10, 10, 10);
+}
+
+.favorite-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* movie detail */
+
+.movie-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.movie-detail-wrapper img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.movie-description-wrapper {
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.movie-info-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  background-color: black;
+}
+
+.footer-wrapper a {
+  border: none;
+}
