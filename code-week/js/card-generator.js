@@ -6,7 +6,12 @@ const cardGenerator = (obj) => {
   wrapper.className = "card-wrapper";
 
   wrapper.addEventListener("click", () => {
-    // console.log(obj);
+    if (!overlay.contains(seeMoreButton)) {
+      overlay.append(seeMoreButton);
+    } else {
+      seeMoreButton.remove();
+    }
+
     overlay.classList.toggle("active");
   });
 
@@ -47,12 +52,12 @@ const cardGenerator = (obj) => {
   });
 
   if (authenticationCheck()) {
-    overlay.append(title, seeMoreButton, addToFavoritesButton);
+    overlay.append(title, addToFavoritesButton);
   } else {
-    overlay.append(title, seeMoreButton);
+    overlay.append(title);
   }
 
-  overlay.append(title, seeMoreButton);
+  overlay.append(title);
   wrapper.append(overlay, filmImage);
 
   return wrapper;
