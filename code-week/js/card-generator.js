@@ -39,10 +39,10 @@ const cardGenerator = (obj) => {
     const objString = JSON.stringify(obj);
     if (!readData(obj.id)) {
       createData(obj.id, objString);
-      addToFavoritesButton.style.backgroundImage = `url("../media/star-full.png")`;
+      addToFavoritesButton.style.backgroundImage = `url("./media/star-full.png")`;
     } else {
       deleteData(obj.id);
-      addToFavoritesButton.style.backgroundImage = `url("../media/star.png")`;
+      addToFavoritesButton.style.backgroundImage = `url("./media/star.png")`;
     }
   });
 

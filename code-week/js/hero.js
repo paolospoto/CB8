@@ -18,7 +18,7 @@ const heroGenerator = () => {
   overlay.className = "hero-overlay";
 
   const logoTitle = document.createElement("img");
-  logoTitle.src = "../media/logo.png";
+  logoTitle.src = "./media/logo.png";
   logoTitle.alt = "logo-title";
   logoTitle.style.width = "200px";
 

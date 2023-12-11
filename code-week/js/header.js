@@ -7,7 +7,7 @@ const headerGenerator = () => {
   wrapper.className = "header-wrapper";
 
   const logo = document.createElement("img");
-  logo.src = "../media/logo-icon.png";
+  logo.src = "./media/logo-icon.png";
   logo.alt = "logo";
   logo.style.width = "50px";
 

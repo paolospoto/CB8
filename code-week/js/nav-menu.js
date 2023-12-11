@@ -14,7 +14,7 @@ const navMenuGenerator = () => {
   });
 
   const favoritesSectionIcon = document.createElement("img");
-  favoritesSectionIcon.src = "../media/star.png";
+  favoritesSectionIcon.src = "./media/star.png";
   favoritesSectionIcon.style.width = "30px";
 
   const username = document.createElement("h3");

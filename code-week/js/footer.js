@@ -9,7 +9,7 @@ const footerGenerator = () => {
   gitHubButton.href = "https://github.com/paolospoto";
 
   const gitHubIcon = document.createElement("img");
-  gitHubIcon.src = "../media/github.png";
+  gitHubIcon.src = "./media/github.png";
   gitHubIcon.style.width = "20px";
 
   gitHubButton.append(gitHubIcon);
