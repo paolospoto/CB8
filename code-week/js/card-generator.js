@@ -6,7 +6,7 @@ const cardGenerator = (obj) => {
   wrapper.className = "card-wrapper";
 
   wrapper.addEventListener("click", () => {
-    console.log(obj);
+    // console.log(obj);
     overlay.classList.toggle("active");
   });
 
@@ -24,7 +24,7 @@ const cardGenerator = (obj) => {
   seeMoreButton.textContent = "INFO";
   seeMoreButton.href = "./movie-detail.html";
   seeMoreButton.addEventListener("click", () => {
-    console.log(obj);
+    // console.log(obj);
     createData("title", obj.title);
     createData("description", obj.overview);
     createData("release", obj.release_date);
@@ -70,7 +70,7 @@ const favoriteCardGenerator = (obj) => {
   seeMoreButton.textContent = "INFO";
   seeMoreButton.href = "./movie-detail.html";
   seeMoreButton.addEventListener("click", () => {
-    console.log(obj);
+    // console.log(obj);
     createData("title", obj.title);
     createData("description", obj.overview);
     createData("release", obj.release_date);
