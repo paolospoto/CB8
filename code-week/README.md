@@ -10,6 +10,10 @@
 
 - **Log In:** Implementation of a login system allowing user authentication.
 
+### Data Source
+
+- **Data:** The movies data for this project are sourced from a public API called MovieDB, which provides comprehensive details about a wide range of movies.
+
 ### Favorites Management
 
 - **Add to Favorites:** Functionality enabling authenticated users to add movies to their favorite list.
