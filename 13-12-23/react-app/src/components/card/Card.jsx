@@ -2,7 +2,6 @@ import Button from "../button/Button";
 import "./index.css";
 
 const Card = ({ cardObj }) => {
-  console.log(cardObj);
   return (
     <div className="Card">
       <img src={cardObj.img} alt={cardObj.title} />
