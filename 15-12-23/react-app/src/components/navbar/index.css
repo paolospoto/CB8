@@ -1,0 +1,23 @@
+.NavbarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  background-color: black;
+}
+
+.NavbarWrapper ul {
+  display: flex;
+  gap: 30px;
+  color: white;
+  list-style: none;
+}
+
+.NavbarWrapper ul li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.NavbarWrapper ul li:hover {
+  color: violet;
+}
