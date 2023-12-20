@@ -1,0 +1,22 @@
+.FooterWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.FooterWrapper img {
+  width: 50px;
+}
+
+.FooterWrapper h3 {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.FooterWrapper h3:hover {
+  color: violet;
+}
