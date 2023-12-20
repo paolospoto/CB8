@@ -1,0 +1,46 @@
+.Post {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 24px;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.Post__Header {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(47, 138, 224);
+  border-bottom: 2px solid grey;
+}
+
+.Post__content,
+.Post__title,
+.Post__info {
+  padding: 12px 24px;
+}
+
+.Post__title {
+  margin: 0;
+}
+
+.Post__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Post__info--categories {
+  display: flex;
+  gap: 10px;
+  list-style-type: none;
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.Post hr {
+  width: 100%;
+  border: 0;
+}
