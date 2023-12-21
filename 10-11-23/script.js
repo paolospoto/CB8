@@ -14,6 +14,7 @@ heroSection.append(heroTitle, heroDescription, hideBtn);
 document.body.append(heroSection);
 btnContainer.append(btnTitle, showBtn);
 document.body.append(btnContainer);
+//test
 
 // CREO I CONTENUTI TESTUALI
 heroTitle.textContent = "Do you want to know the truth about the universe?";
