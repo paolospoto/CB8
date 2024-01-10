@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./index.scss";
 
 const DoneItem = ({ doneItemData, onCheck }) => {
-  const { todo, userId } = doneItemData;
+  const { todo } = doneItemData;
   const [isChecked, setIsChecked] = useState(true);
 
   const handleOnChange = () => {
@@ -11,8 +11,7 @@ const DoneItem = ({ doneItemData, onCheck }) => {
   };
 
   return (
-    <div className="card-item">
-      <h2>{userId}</h2>
+    <div className="done-card-item">
       <p>{todo}</p>
       <input type="checkbox" checked={isChecked} onChange={handleOnChange} />
     </div>

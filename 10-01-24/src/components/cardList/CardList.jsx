@@ -30,7 +30,7 @@ const CardList = () => {
         <TodoItem todoItemData={todo} key={todo.id} onCheck={handleCheck} />
       ))}
 
-      <h1>Good Job!</h1>
+      <h1>Done so far:</h1>
       {checkedItems.map((todo) => (
         <DoneItem doneItemData={todo} key={todo.id} onCheck={handleNotCheck} />
       ))}
