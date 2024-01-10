@@ -1,0 +1,8 @@
+@import "../../assets/css/mixins.scss";
+
+.card-list {
+  @include flex-wrapper(column, nowrap, center, center, 20px);
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

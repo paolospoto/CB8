@@ -1,0 +1,14 @@
+@mixin flex-wrapper(
+  $dir: row,
+  $wrap: nowrap,
+  $align: inherit,
+  $justify: inherit,
+  $gap: 0px
+) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}

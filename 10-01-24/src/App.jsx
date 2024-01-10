@@ -1,7 +1,13 @@
+import CardList from "./components/cardList/CardList";
+
 import "./App.scss";
 
 function App() {
-  return <h1>first draft</h1>;
+  return (
+    <div>
+      <CardList></CardList>
+    </div>
+  );
 }
 
 export default App;
