@@ -1,6 +1,8 @@
+@import "./src/assets/css/utils.scss";
+
 body {
   position: relative;
   height: 100%;
-  background-color: #fbc4ab;
+  background-color: $item-color;
   padding: 10px;
 }

@@ -1,11 +1,51 @@
+@import "../../assets/css/utils.scss";
+
 .card-item {
   width: 90%;
-  background-color: #f08080;
-  color: white;
+  background-color: $item-color-strong;
+  color: black;
+  text-align: center;
   border-bottom: 2px solid rgb(255, 255, 255);
   box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
     0 6px 20px 0 rgba(255, 255, 255, 0.19);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding: 1.5rem;
+  p {
+    overflow-x: scroll;
+    overflow-wrap: break-word;
+    width: 200px;
+    height: 70px;
+  }
+
+  button {
+    background-color: $main-color-strong;
+    color: white;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #4058a0;
+    }
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .check {
+      width: 25px;
+      height: 25px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: #ffffff;
+      border: 2px solid #5070c8;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
 }

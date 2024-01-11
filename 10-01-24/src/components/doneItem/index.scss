@@ -1,11 +1,28 @@
+@import "../../assets/css/utils.scss";
 .done-card-item {
   width: 90%;
-  background-color: #7a4141;
-  color: white;
-  border-bottom: 2px solid rgb(0, 0, 0);
+  background-color: $item-color-strong;
+  color: black;
+  text-align: center;
+  border-bottom: 2px solid rgb(255, 255, 255);
   box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
     0 6px 20px 0 rgba(255, 255, 255, 0.19);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding: 1.5rem;
+  p {
+    overflow-x: scroll;
+    overflow-wrap: break-word;
+    width: 200px;
+    height: 70px;
+  }
+  .check {
+    width: 25px;
+    height: 25px;
+
+    background-color: #ffffff;
+    border: 2px solid #5070c8;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }

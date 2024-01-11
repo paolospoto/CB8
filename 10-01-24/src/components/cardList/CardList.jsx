@@ -2,6 +2,7 @@ import TodoItem from "../todoItem/TodoItem";
 import { useState, useEffect } from "react";
 import "./index.scss";
 import DoneItem from "../doneItem/DoneItem";
+import InputForm from "../inputForm/InputForm";
 
 const CardList = () => {
   const [todoList, setTodoList] = useState([]);
@@ -15,6 +16,7 @@ const CardList = () => {
   }, []);
 
   const handleCheck = (item) => {
+    console.log(item);
     setCheckedItems((prev) => [...prev, item]);
     setTodoList((prev) => prev.filter((i) => i.id !== item.id));
   };
@@ -33,15 +35,20 @@ const CardList = () => {
     }
   };
 
+  const handleNewTodo = (item) => {
+    setTodoList((prev) => [...prev, item]);
+  };
+
   return (
     <div className="card-list">
-      <button onClick={handleClick}>ALready done</button>
+      <InputForm onInput={handleNewTodo}></InputForm>
+      <button onClick={handleClick}>Done tasks</button>
       {todoList.map((todo) => (
         <TodoItem todoItemData={todo} key={todo.id} onCheck={handleCheck} />
       ))}
 
       <div className={isClicked ? "done-list" : "hide"}>
-        <button onClick={handleClick}>X</button>
+        <button onClick={handleClick}>Back</button>
         {checkedItems.map((todo) => (
           <DoneItem
             doneItemData={todo}

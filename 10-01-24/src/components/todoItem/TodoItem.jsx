@@ -2,18 +2,48 @@ import { useState } from "react";
 import "./index.scss";
 
 const TodoItem = ({ todoItemData, onCheck }) => {
-  const { todo } = todoItemData;
+  const [todoText, setTodoText] = useState(todoItemData.todo);
   const [isChecked, setIsChecked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const data = { todo: todoText, id: todoItemData.id };
 
   const handleOnChange = () => {
     setIsChecked(true);
-    onCheck(todoItemData, true);
+    onCheck(data, true);
+  };
+
+  const handleClick = () => {
+    !isClicked ? setIsClicked(true) : setIsClicked(false);
+  };
+
+  const handleTodoChange = () => {
+    setTodoText(event.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      setIsClicked(false); // Chiude l'input
+    }
   };
 
   return (
     <div className="card-item">
-      <p>{todo}</p>
-      <input type="checkbox" checked={isChecked} onChange={handleOnChange} />
+      <div className="wrapper">
+        {!isClicked ? (
+          <p>{todoText}</p>
+        ) : (
+          <input type="text" onChange={handleTodoChange} />
+        )}
+        <input
+          className="check"
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleOnChange}
+          onKeyDown={handleKeyDown}
+        />
+      </div>
+
+      <button onClick={handleClick}>✍</button>
     </div>
   );
 };

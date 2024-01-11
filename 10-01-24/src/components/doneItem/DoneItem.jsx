@@ -13,7 +13,12 @@ const DoneItem = ({ doneItemData, onCheck }) => {
   return (
     <div className="done-card-item">
       <p>{todo}</p>
-      <input type="checkbox" checked={isChecked} onChange={handleOnChange} />
+      <input
+        className="check"
+        type="checkbox"
+        checked={isChecked}
+        onChange={handleOnChange}
+      />
     </div>
   );
 };
