@@ -6,6 +6,7 @@ import DoneItem from "../doneItem/DoneItem";
 const CardList = () => {
   const [todoList, setTodoList] = useState([]);
   const [checkedItems, setCheckedItems] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     fetch("https://dummyjson.com/todos")
@@ -24,16 +25,31 @@ const CardList = () => {
     console.log(checkedItems);
   };
 
+  const handleClick = () => {
+    if (!isClicked) {
+      setIsClicked(true);
+    } else {
+      setIsClicked(false);
+    }
+  };
+
   return (
     <div className="card-list">
+      <button onClick={handleClick}>ALready done</button>
       {todoList.map((todo) => (
         <TodoItem todoItemData={todo} key={todo.id} onCheck={handleCheck} />
       ))}
 
-      <h1>Done so far:</h1>
-      {checkedItems.map((todo) => (
-        <DoneItem doneItemData={todo} key={todo.id} onCheck={handleNotCheck} />
-      ))}
+      <div className={isClicked ? "done-list" : "hide"}>
+        <button onClick={handleClick}>X</button>
+        {checkedItems.map((todo) => (
+          <DoneItem
+            doneItemData={todo}
+            key={todo.id}
+            onCheck={handleNotCheck}
+          />
+        ))}
+      </div>
     </div>
   );
 };

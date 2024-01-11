@@ -5,7 +5,22 @@
 
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%;
 }
-h1 {
-  color: white;
+
+.done-list {
+  @include flex-wrapper(column, nowrap, center, top, 20px);
+
+  // overflow-y: scroll;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fbc4ab;
+}
+
+.hide {
+  display: none;
 }
