@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./index.scss";
 import DoneItem from "../doneItem/DoneItem";
 import InputForm from "../inputForm/InputForm";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const CardList = () => {
   const [todoList, setTodoList] = useState([]);
@@ -43,9 +44,35 @@ const CardList = () => {
     <div className="card-list">
       <InputForm onInput={handleNewTodo}></InputForm>
       <button onClick={handleClick}>Done tasks</button>
-      {todoList.map((todo) => (
-        <TodoItem todoItemData={todo} key={todo.id} onCheck={handleCheck} />
-      ))}
+      <DragDropContext
+        onDragEnd={() => {
+          console.log("droppato");
+        }}
+      >
+        <Droppable droppableId="ROOT" type="group">
+          {(provided) => (
+            <div {...provided.droppableProps} ref={provided.innerRef}>
+              {todoList.map((todo, index) => (
+                <Draggable draggableId={todo.todo} key={todo.id} index={index}>
+                  {(provided) => (
+                    <div
+                      {...provided.dragHandleProps}
+                      {...provided.draggableProps}
+                      ref={provided.innerRef}
+                    >
+                      <TodoItem
+                        todoItemData={todo}
+                        key={todo.id}
+                        onCheck={handleCheck}
+                      />
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
 
       <div className={isClicked ? "done-list" : "hide"}>
         <button onClick={handleClick}>Back</button>
