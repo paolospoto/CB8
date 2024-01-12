@@ -40,18 +40,41 @@ const CardList = () => {
     setTodoList((prev) => [...prev, item]);
   };
 
+  const handleDrop = (results) => {
+    const { source, destination } = results;
+
+    if (!destination) return;
+
+    if (source.index === destination.index) return;
+
+    const sourceIndex = source.index;
+    const destinationIndex = destination.index;
+
+    const tempTodoList = [...todoList];
+
+    const [removedTodo] = tempTodoList.splice(sourceIndex, 1);
+
+    tempTodoList.splice(destinationIndex, 0, removedTodo);
+
+    setTodoList(tempTodoList);
+  };
+
+  useEffect(() => {
+    console.log(todoList);
+  }, [todoList]);
+
   return (
     <div className="card-list">
       <InputForm onInput={handleNewTodo}></InputForm>
       <button onClick={handleClick}>Done tasks</button>
-      <DragDropContext
-        onDragEnd={() => {
-          console.log("droppato");
-        }}
-      >
-        <Droppable droppableId="ROOT" type="group">
+      <DragDropContext onDragEnd={handleDrop}>
+        <Droppable droppableId="ROOT">
           {(provided) => (
-            <div {...provided.droppableProps} ref={provided.innerRef}>
+            <div
+              {...provided.droppableProps}
+              type="group"
+              ref={provided.innerRef}
+            >
               {todoList.map((todo, index) => (
                 <Draggable draggableId={todo.todo} key={todo.id} index={index}>
                   {(provided) => (
