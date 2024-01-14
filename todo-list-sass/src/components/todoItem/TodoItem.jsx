@@ -22,7 +22,7 @@ const TodoItem = ({ todoItemData, onCheck }) => {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      setIsClicked(false); // Chiude l'input
+      setIsClicked(false);
     }
   };
 
