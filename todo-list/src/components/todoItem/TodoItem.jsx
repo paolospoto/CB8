@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import styles from "./index.module.scss";
 
 const TodoItem = ({ todoData, id, isDone, onCheck }) => {
@@ -7,9 +8,9 @@ const TodoItem = ({ todoData, id, isDone, onCheck }) => {
 
   const handleCheck = (event) => {
     if (event.target.checked) {
-      onCheck(todoData, id, true);
+      onCheck(todoText, id, true);
     } else {
-      onCheck(todoData, id, false);
+      onCheck(todoText, id, false);
     }
   };
 
@@ -22,19 +23,30 @@ const TodoItem = ({ todoData, id, isDone, onCheck }) => {
   };
 
   return (
-    <div className={!isDone ? styles.wrapper : styles.wrapper2}>
+    <div className={!isDone ? styles.todo : styles.done}>
       {!isClicked ? (
         <p>{todoText}</p>
       ) : (
-        <input type="text" onChange={handleTodoChange} />
-      )}
-      <div>
         <input
+          className={styles.input}
+          type="text"
+          onChange={handleTodoChange}
+        />
+      )}
+      <div className={styles.controls}>
+        <input
+          className={styles.checkbox}
           checked={isDone ? true : false}
           type="checkbox"
           onChange={handleCheck}
         />
-        <button onClick={handleClick}>{!isClicked ? "MOD" : "CONF"}</button>
+        <button className={styles.button} onClick={handleClick}>
+          {!isClicked ? (
+            <img src="../public/pen.svg" width={25}></img>
+          ) : (
+            <img src="../public/confirm.svg" width={25}></img>
+          )}
+        </button>
       </div>
     </div>
   );

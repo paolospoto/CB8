@@ -1,7 +1,36 @@
-.wrapper {
-  background-color: red;
+@import "../../assets/css/utils.scss";
+
+.todo {
+  @include flex-wrapper(row, space-between, center);
+  color: white;
+  background-color: $card-soft;
+  padding: $card-padding;
+  border: $border-size solid $border-color;
+  border-radius: $border-radius;
+  margin-bottom: 20px;
 }
 
-.wrapper2 {
-  background-color: blue;
+.done {
+  @include flex-wrapper(row, space-between, center);
+  color: white;
+  background-color: $card-strong;
+  padding: $card-padding;
+  border: $border-size solid $border-color;
+  border-radius: $border-radius;
+  margin-bottom: 20px;
+}
+
+.controls {
+  @include flex-wrapper(column, center, center);
+  .checkbox {
+    transform: scale(1.5);
+    &:checked {
+      background-color: white;
+    }
+  }
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
 }
