@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import InputForm from "../inputForm/InputForm";
 import TodoItem from "../todoItem/TodoItem";
 
 const TodoList = () => {
@@ -11,6 +12,10 @@ const TodoList = () => {
       .then((res) => res.json())
       .then((data) => setTodoList(data.todos));
   }, []);
+
+  const createTodo = (item) => {
+    setTodoList((prev) => [...prev, item]);
+  };
 
   const handleCheck = (todo, id, check) => {
     if (check) {
@@ -27,13 +32,14 @@ const TodoList = () => {
     isRendered ? setIsRendered(false) : setIsRendered(true);
   };
 
-  useEffect(() => {
-    console.log("todo", todoList);
-    console.log("checked", checkedList);
-  }, [todoList, checkedList]);
+  //  debug useEffect(() => {
+  //     console.log("todo", todoList);
+  //     console.log("checked", checkedList);
+  //   }, [todoList, checkedList]);
 
   return (
     <div>
+      <InputForm onInput={createTodo}></InputForm>
       <button onClick={handleListRendering}>see checked</button>
       {todoList.map((item) => (
         <TodoItem
