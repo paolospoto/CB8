@@ -1,0 +1,30 @@
+// COLORS
+
+$background: #353535;
+$card-soft: #3c6e71;
+$card-strong: #284b63;
+$shadow: rgb(197, 197, 197);
+$border-color: #ffffff;
+
+// MEASURES
+
+$background-padding: 1rem;
+$card-padding: 2rem;
+$button-padding: 0.5rem;
+$border-size: 0.3px;
+$border-radius: 10px;
+
+// MIXINS
+
+@mixin flex-wrapper(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $gap: 15px
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}

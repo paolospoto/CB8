@@ -1,8 +1,9 @@
 import { useState } from "react";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const InputForm = ({ onInput }) => {
   const [todo, setTodo] = useState("");
+  const [lastAdded, setLastAdded] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [counter, setCounter] = useState(1000);
   const data = { todo: todo, id: counter };
@@ -12,20 +13,26 @@ const InputForm = ({ onInput }) => {
   };
 
   const handleSubmit = () => {
+    if (todo === "") return alert("Can't add an empty task!");
+    if (lastAdded === todo) return alert("You already added that task!");
     setCounter((prev) => prev + 1);
     onInput(data, true);
+    setLastAdded(todo);
     setInputValue("");
   };
   return (
-    <div className="form">
+    <div className={styles.wrapper}>
       <input
+        className={styles.input}
         type="text"
         onChange={handleChange}
         value={inputValue}
         placeholder="Es: Buy some wine at the shop"
       />
 
-      <button onClick={handleSubmit}>Invia</button>
+      <button className={styles.button} onClick={handleSubmit}>
+        Invia
+      </button>
     </div>
   );
 };

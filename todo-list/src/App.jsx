@@ -1,11 +1,10 @@
-import CardList from "./components/cardList/CardList";
-
+import TodoList from "./components/todoList/TodoList";
 import "./App.scss";
 
 function App() {
   return (
     <div>
-      <CardList></CardList>
+      <TodoList></TodoList>
     </div>
   );
 }

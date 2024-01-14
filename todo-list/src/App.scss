@@ -1,0 +1,9 @@
+@import "./assets/css/utils.scss";
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: $background;
+  font-family: "Segoe UI", "San Francisco", "Roboto", sans-serif;
+  font-size: 18px;
+}
