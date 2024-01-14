@@ -4,6 +4,7 @@ import TodoItem from "../todoItem/TodoItem";
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
   const [checkedList, setCheckedList] = useState([]);
+  const [isRendered, setIsRendered] = useState(false);
 
   useEffect(() => {
     fetch("https://dummyjson.com/todos")
@@ -22,6 +23,10 @@ const TodoList = () => {
     }
   };
 
+  const handleListRendering = () => {
+    isRendered ? setIsRendered(false) : setIsRendered(true);
+  };
+
   useEffect(() => {
     console.log("todo", todoList);
     console.log("checked", checkedList);
@@ -29,6 +34,7 @@ const TodoList = () => {
 
   return (
     <div>
+      <button onClick={handleListRendering}>see checked</button>
       {todoList.map((item) => (
         <TodoItem
           todoData={item.todo}
@@ -38,15 +44,18 @@ const TodoList = () => {
           onCheck={handleCheck}
         ></TodoItem>
       ))}
-      {checkedList.map((item) => (
-        <TodoItem
-          todoData={item.todo}
-          id={item.id}
-          key={item.id}
-          isDone={true}
-          onCheck={handleCheck}
-        ></TodoItem>
-      ))}
+
+      {isRendered
+        ? checkedList.map((item) => (
+            <TodoItem
+              todoData={item.todo}
+              id={item.id}
+              key={item.id}
+              isDone={true}
+              onCheck={handleCheck}
+            ></TodoItem>
+          ))
+        : null}
     </div>
   );
 };
