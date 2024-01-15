@@ -22,6 +22,13 @@ const TodoItem = ({ todoData, id, isDone, onCheck }) => {
     setTodoText(event.target.value);
   };
 
+  const handleKeyDown = () => {
+    if (event.key === "Enter") {
+      handleTodoChange();
+      handleClick();
+    }
+  };
+
   return (
     <div className={!isDone ? styles.todo : styles.done}>
       {!isClicked ? (
@@ -31,6 +38,7 @@ const TodoItem = ({ todoData, id, isDone, onCheck }) => {
           className={styles.input}
           type="text"
           onChange={handleTodoChange}
+          onKeyDown={handleKeyDown}
         />
       )}
       <div className={styles.controls}>

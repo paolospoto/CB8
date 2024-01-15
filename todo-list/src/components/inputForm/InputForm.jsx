@@ -20,12 +20,18 @@ const InputForm = ({ onInput }) => {
     setLastAdded(todo);
     setInputValue("");
   };
+
+  const handleKeyDown = () => {
+    if (event.key === "Enter") handleSubmit();
+  };
+
   return (
     <div className={styles.wrapper}>
       <input
         className={styles.input}
         type="text"
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         value={inputValue}
         placeholder="Es: Buy some wine at the shop"
       />
