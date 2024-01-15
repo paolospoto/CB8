@@ -2,6 +2,7 @@
 
 .main_section {
   position: relative;
+
   height: 100vh;
 }
 
@@ -24,4 +25,36 @@
   border: none;
   background-color: transparent;
   padding: $button-padding;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%); /* Parte dall'alto (fuori schermo) */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* Scende fino alla posizione finale */
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.popup {
+  animation: slideDown 0.5s ease-out, slideUp 0.5s ease-out 2.5s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+  padding: 40px;
 }

@@ -9,8 +9,10 @@ import Bin from "../bin/Bin";
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
   const [checkedList, setCheckedList] = useState([]);
+  const [deletedTodo, setDeletedTodo] = useState({});
   const [isRendered, setIsRendered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
     fetch("https://dummyjson.com/todos")
@@ -43,13 +45,21 @@ const TodoList = () => {
   const handleDrop = (results) => {
     const { source, destination } = results;
     const tempTodoList = [...todoList];
+    let tempDeletedTodo = {};
     const sourceIndex = source.index;
     const destinationIndex = destination.index;
 
     if (destination.droppableId === "TRASH") {
-      tempTodoList.splice(sourceIndex, 1);
+      const [removedTodo] = tempTodoList.splice(sourceIndex, 1);
+      tempDeletedTodo = removedTodo;
+
       setIsDragging(false);
-      return setTodoList(tempTodoList);
+      setIsDeleted(true);
+      setTimeout(() => {
+        setIsDeleted(false);
+      }, 3000);
+      setTodoList(tempTodoList);
+      setDeletedTodo(tempDeletedTodo);
     }
 
     const [removedTodo] = tempTodoList.splice(sourceIndex, 1);
@@ -64,8 +74,25 @@ const TodoList = () => {
     setIsDragging(true);
   };
 
+  const handleUndo = () => {
+    const tempTodoList = [...todoList];
+
+    tempTodoList.unshift(deletedTodo);
+    setTodoList(tempTodoList);
+    setIsDeleted(false);
+  };
+
   return (
     <div className={styles.main_section}>
+      {isDeleted ? (
+        <button
+          onClick={handleUndo}
+          className={`${styles.button} ${styles.popup}`}
+        >
+          <img src="/public/undo.svg" alt="undo" width={50} />
+        </button>
+      ) : null}
+
       <DragDropContext onDragStart={handleDragStart} onDragEnd={handleDrop}>
         <Droppable droppableId="TRASH">
           {(provided) => (
