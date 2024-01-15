@@ -1,7 +1,7 @@
 @import "../../assets/css/utils.scss";
 
 .wrapper {
-  @include flex-wrapper(column, center, center);
+  @include flex-wrapper(row, center, center);
 
   padding: $card-padding;
   background-color: $shadow;
