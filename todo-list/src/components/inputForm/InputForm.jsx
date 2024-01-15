@@ -31,7 +31,7 @@ const InputForm = ({ onInput }) => {
       />
 
       <button className={styles.button} onClick={handleSubmit}>
-        Invia
+        Add
       </button>
     </div>
   );
