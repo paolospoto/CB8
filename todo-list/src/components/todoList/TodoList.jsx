@@ -16,7 +16,11 @@ const TodoList = () => {
   }, []);
 
   const createTodo = (item) => {
-    setTodoList((prev) => [...prev, item]);
+    const tempTodoList = [...todoList];
+
+    tempTodoList.unshift(item);
+
+    setTodoList(tempTodoList);
   };
 
   const handleCheck = (todo, id, check) => {
