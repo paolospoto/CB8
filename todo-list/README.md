@@ -10,6 +10,8 @@ This is a demonstrative Todo List application, designed to showcase basic functi
 - **Add New Todo**: Users have the ability to add new todo items, allowing for dynamic list management.
 - **Edit Todo**: After adding a todo, users can modify it as needed, ensuring the list always reflects current tasks.
 - **Check Off Todos**: Todos can be marked as complete, and there's a dedicated section to view all checked items, aiding in tracking progress and task completion.
+- **Drag to Delete**: Users can delete a todo by dragging it to a trash bin icon. This action provides a quick and intuitive way to remove tasks.
+- **Restore Deleted Todos**: A dedicated button allows users to restore recently deleted todos, offering a safety net in case of accidental deletions.
 
 <div align="center">
 <img src="./screenshots/screen1.png" alt="First Screenshot" width="367,3" height="600" style="margin-right: 30px;">
