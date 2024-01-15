@@ -2,15 +2,22 @@
 
 .main_section {
   position: relative;
+  height: 100vh;
+}
+
+.list {
+  overflow-y: scroll;
+  height: 65vh;
 }
 
 .done_list {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
   background-color: $background;
+  overflow-y: scroll;
+  height: 90vh;
 }
 
 .button {

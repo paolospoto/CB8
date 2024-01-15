@@ -3,6 +3,8 @@
 body {
   margin: 0;
   padding: 2rem;
+  height: 100vh;
+  overflow: hidden;
   background-color: $background;
   font-family: "Segoe UI", "San Francisco", "Roboto", sans-serif;
   font-size: 18px;

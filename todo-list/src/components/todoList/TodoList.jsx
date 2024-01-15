@@ -24,7 +24,6 @@ const TodoList = () => {
       setCheckedList((prev) => [...prev, { todo: todo, id: id }]);
       setTodoList((prev) => prev.filter((i) => i.todo !== todo));
     } else {
-      console.log(todo);
       setCheckedList((prev) => prev.filter((i) => i.todo !== todo));
       setTodoList((prev) => [...prev, { todo: todo, id: id }]);
     }
@@ -53,11 +52,6 @@ const TodoList = () => {
     setTodoList(tempTodoList);
   };
 
-  //  debug useEffect(() => {
-  //     console.log("todo", todoList);
-  //     console.log("checked", checkedList);
-  //   }, [todoList, checkedList]);
-
   return (
     <div className={styles.main_section}>
       <InputForm onInput={createTodo}></InputForm>
@@ -70,6 +64,7 @@ const TodoList = () => {
             <div
               {...provided.droppableProps}
               type="group"
+              className={styles.list}
               ref={provided.innerRef}
             >
               {todoList.map((item, index) => (
