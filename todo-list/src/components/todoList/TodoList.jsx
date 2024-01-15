@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import InputForm from "../inputForm/InputForm";
 import TodoItem from "../todoItem/TodoItem";
+
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import styles from "./index.module.scss";
+import Bin from "../bin/Bin";
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
   const [checkedList, setCheckedList] = useState([]);
   const [isRendered, setIsRendered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     fetch("https://dummyjson.com/todos")
@@ -39,30 +42,50 @@ const TodoList = () => {
 
   const handleDrop = (results) => {
     const { source, destination } = results;
-
-    if (!destination) return;
-
-    if (source.index === destination.index) return;
-
+    const tempTodoList = [...todoList];
     const sourceIndex = source.index;
     const destinationIndex = destination.index;
 
-    const tempTodoList = [...todoList];
+    if (destination.droppableId === "TRASH") {
+      tempTodoList.splice(sourceIndex, 1);
+      setIsDragging(false);
+      return setTodoList(tempTodoList);
+    }
 
     const [removedTodo] = tempTodoList.splice(sourceIndex, 1);
 
     tempTodoList.splice(destinationIndex, 0, removedTodo);
 
+    setIsDragging(false);
     setTodoList(tempTodoList);
+  };
+
+  const handleDragStart = () => {
+    setIsDragging(true);
   };
 
   return (
     <div className={styles.main_section}>
-      <InputForm onInput={createTodo}></InputForm>
-      <button onClick={handleListRendering} className={styles.button}>
-        <img src="/public/done.svg" alt="done-items" width={25} />
-      </button>
-      <DragDropContext onDragEnd={handleDrop}>
+      <DragDropContext onDragStart={handleDragStart} onDragEnd={handleDrop}>
+        <Droppable droppableId="TRASH">
+          {(provided) => (
+            <div
+              {...provided.droppableProps}
+              type="group"
+              className={styles.trash}
+              ref={provided.innerRef}
+            >
+              {!isDragging ? (
+                <InputForm onInput={createTodo}></InputForm>
+              ) : (
+                <Bin></Bin>
+              )}
+            </div>
+          )}
+        </Droppable>
+        <button onClick={handleListRendering} className={styles.button}>
+          <img src="/public/done.svg" alt="done-items" width={25} />
+        </button>
         <Droppable droppableId="ROOT">
           {(provided) => (
             <div
@@ -90,6 +113,7 @@ const TodoList = () => {
                   )}
                 </Draggable>
               ))}
+              {provided.placeholder}
             </div>
           )}
         </Droppable>

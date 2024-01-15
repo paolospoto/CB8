@@ -1,0 +1,8 @@
+@import "../../assets/css/utils.scss";
+
+.bin {
+  @include flex-wrapper(row, center, center);
+  height: 10vh;
+  border: 2px solid #bd0000;
+  border-radius: $border-radius;
+}
