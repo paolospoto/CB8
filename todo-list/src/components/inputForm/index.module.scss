@@ -2,10 +2,7 @@
 
 .wrapper {
   @include flex-wrapper(column, center, center);
-  // position: fixed;
-  // top: 10px;
-  // left: 2rem;
-  // right: 2rem;
+
   padding: $card-padding;
   background-color: $shadow;
   border: $border-size solid $border-color;

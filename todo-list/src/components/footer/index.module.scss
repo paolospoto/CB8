@@ -2,10 +2,20 @@
 
 .footer {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
+  bottom: 1rem;
+  left: 2rem;
+  right: 2rem;
+  border-radius: $border-radius;
+  border: $border-size solid $border-color;
+
+  height: 40px;
   @include flex-wrapper(row, center, center);
   background-color: $shadow;
+  p {
+    color: white;
+  }
+
+  a {
+    cursor: pointer;
+  }
 }
