@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 50%;
+  height: 40px;
+  background-color: #f2e9e4;
+  border-radius: 20px;
+  list-style: none;
+
+  .list {
+    color: #22223b;
+    text-decoration: none;
+    img {
+      width: 30px;
+    }
+  }
+}
