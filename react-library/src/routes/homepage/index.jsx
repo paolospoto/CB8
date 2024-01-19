@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import BookList from "../../components/bookList";
 import { HTTP_GET } from "../../utils/http";
 import styles from "./index.module.scss";
-
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+
+import Shell from "../../shell/shell-component/Shell";
 
 export default function Homepage() {
   const [lists, setLists] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     Promise.all([
@@ -16,11 +19,14 @@ export default function Homepage() {
     ]).then((data) => setLists(data));
   }, []);
 
-  return (
-    <div className={styles.Homepage}>
-      <Link to={"/copyrights"}>COPYRIGHTS</Link>
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
-      <input type="text" />
+  return (
+    <Shell header={true} navbar={true} className={styles.Homepage}>
+      <input type="text" onChange={handleChange} />
+      <Link to={`/book/${inputValue}`}>GO</Link>
       {lists.map((list, i) => (
         <BookList
           bookListData={list.works}
@@ -28,6 +34,6 @@ export default function Homepage() {
           key={i}
         />
       ))}
-    </div>
+    </Shell>
   );
 }
