@@ -1,3 +1,6 @@
 body {
   margin: 0;
+  padding: 1rem;
+  background-color: rgb(8, 8, 58);
+  color: white;
 }

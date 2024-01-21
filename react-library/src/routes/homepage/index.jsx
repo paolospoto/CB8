@@ -25,8 +25,12 @@ export default function Homepage() {
 
   return (
     <Shell header={true} navbar={true} className={styles.Homepage}>
-      <input type="text" onChange={handleChange} />
-      <Link to={`/book/${inputValue}`}>GO</Link>
+      <div className={styles.wrapper}>
+        <input type="text" onChange={handleChange} />
+        <Link className={styles.link} to={`/book/${inputValue}`}>
+          GO
+        </Link>
+      </div>
       {lists.map((list, i) => (
         <BookList
           bookListData={list.works}
