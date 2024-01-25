@@ -3,7 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
+  "/help": "pages/help.js",
   "/pokedex": "pages/pokedex.js",
-  "/pokedex/[name]": "pages/pokedex/[name].js",
-  "/help": "pages/help.js"
+  "/pokedex/[name]": "pages/pokedex/[name].js"
 }
