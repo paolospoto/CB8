@@ -1,8 +1,8 @@
 import OpenAI from "openai";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
-import { IconCopy, IconReload, IconSend } from "@tabler/icons-react";
+import { IconCopy, IconReload } from "@tabler/icons-react";
 
 export default function Home() {
   const openai = new OpenAI({
