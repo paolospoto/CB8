@@ -1,0 +1,32 @@
+[
+  {
+    "titolo": "Nike Air Max 270",
+    "descrizione": "La Nike Air Max 270 è ispirata a due icone Air: la Air Max 180 e la Air Max 93. È dotata della più grande unità Air nel tallone mai usata da Nike, per un'andatura super morbida che sembra quasi impossibile.",
+    "prezzo": "150.00€",
+    "id": "1"
+  },
+  {
+    "titolo": "Adidas Ultraboost 21",
+    "descrizione": "Scarpe running che offrono un incredibile ritorno di energia ad ogni passo, ideali per chi cerca performance e comfort. La tomaia in Primeknit avvolge il piede con un supporto adattivo, leggerezza e comfort.",
+    "prezzo": "180.00€",
+    "id": "2"
+  },
+  {
+    "titolo": "Puma RS-X",
+    "descrizione": "Le Puma RS-X reinventano il concetto di sport e stile con un design audace e dimensioni esagerate. Queste scarpe sono un tributo all'innovazione e all'espressione di sé, con colori vivaci e dettagli unici.",
+    "prezzo": "110.00€",
+    "id": "3"
+  },
+  {
+    "titolo": "New Balance 574 Classic",
+    "descrizione": "Un classico del comfort e dello stile, le New Balance 574 offrono una silhouette atemporale e un'ammortizzazione che dura tutto il giorno. Perfette per l'uso quotidiano, combinano moda e funzionalità.",
+    "prezzo": "80.00€",
+    "id": "4"
+  },
+  {
+    "titolo": "Converse Chuck Taylor All Star",
+    "descrizione": "Le iconiche Converse Chuck Taylor All Star mantengono il design classico che ha attraversato generazioni. Queste scarpe versatili si abbinano a quasi ogni outfit, offrendo uno stile senza tempo.",
+    "prezzo": "60.00€",
+    "id": "5"
+  }
+]

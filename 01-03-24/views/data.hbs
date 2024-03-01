@@ -1,0 +1,20 @@
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elenco Prodotti</title>
+
+  </head>
+  <body>
+    <h1>Elenco Prodotti</h1>
+    <div class="container-prodotti">
+      {{#each items}}
+        <div class="prodotto">
+          <h2>{{titolo}}</h2>
+          <p>{{descrizione}}</p>
+          <p class="prezzo">Prezzo: {{prezzo}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </body>
+</html>
